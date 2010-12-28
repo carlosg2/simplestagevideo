@@ -75,7 +75,7 @@ package org.bytearray.video
 			if (on) 
 			{
 				_stageVideoInUse = true;
-				if ( _sv == null )
+				if ( _sv == null && stage.stageVideos.length > 0 )
 				{
 					_sv = stage.stageVideos[0];
 					_sv.addEventListener(StageVideoEvent.RENDER_STATE, onRenderState);
