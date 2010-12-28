@@ -72,7 +72,7 @@ package org.bytearray.video
 		 */		
 		public function toggle(on:Boolean):void
 		{			
-			if (on) 
+			if (on && _available) 
 			{
 				_stageVideoInUse = true;
 				if ( _sv == null && stage.stageVideos.length > 0 )
