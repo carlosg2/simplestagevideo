@@ -4,12 +4,14 @@
 	
 package org.bytearray.video
 {
+	import flash.display.BitmapData;
 	import flash.display.Sprite;
 	import flash.events.Event;
 	import flash.events.EventDispatcher;
 	import flash.events.StageVideoAvailabilityEvent;
 	import flash.events.StageVideoEvent;
 	import flash.events.VideoEvent;
+	import flash.geom.Matrix;
 	import flash.geom.Rectangle;
 	import flash.media.StageVideo;
 	import flash.media.StageVideoAvailability;
@@ -62,6 +64,17 @@ package org.bytearray.video
 		{
 			_width = width, _height = height;
 			init();
+		}
+
+		/**
+		 * 
+		 * @param bitmapData
+		 * @param matrix
+		 * 
+		 */		
+		public function drawToBitmapData ( bitmapData:BitmapData, matrix:Matrix ):void
+		{
+			
 		}
 		
 		/**
@@ -148,6 +161,16 @@ package org.bytearray.video
 		public function get video():Video
 		{
 			return _video;
+		}
+	
+		/**
+		 * 
+		 * @return Returns the Stage Video availability.
+		 * 
+		 */		
+		public function get available():Boolean
+		{
+			return _available;
 		}
 
 		/**
