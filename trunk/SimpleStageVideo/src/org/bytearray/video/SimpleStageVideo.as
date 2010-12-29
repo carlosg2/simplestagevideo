@@ -182,9 +182,13 @@ package org.bytearray.video
 		 */		
 		private function onAddedToStage(event:Event):void
 		{
-			removeEventListener(Event.ADDED_TO_STAGE, onAddedToStage);
 			stage.addEventListener(StageVideoAvailabilityEvent.STAGE_VIDEO_AVAILABILITY, onStageVideoAvailable);
 			_video.addEventListener(VideoEvent.RENDER_STATE, onRenderState);
+			
+			if (_classicVideoInUse)
+				stage.addChildAt(_video, 0);
+			else if ( _stageVideoInUse )
+				_sv.viewPort = _videoRect;
 		}
 		
 		/**
