@@ -19,6 +19,7 @@ package org.bytearray.video
 	import flash.net.NetStream;
 	
 	import org.bytearray.video.events.SimpleStageVideoEvent;
+	import org.bytearray.video.events.SimpleStageVideoToggleEvent;
 
 	/**
 	 * The SimpleStageVideo class allows you to leverage StageVideo trough a few lines of ActionScript.
@@ -65,17 +66,6 @@ package org.bytearray.video
 			_width = width, _height = height;
 			init();
 		}
-
-		/**
-		 * 
-		 * @param bitmapData
-		 * @param matrix
-		 * 
-		 */		
-		public function drawToBitmapData ( bitmapData:BitmapData, matrix:Matrix ):void
-		{
-			
-		}
 		
 		/**
 		 * Forces the switch from Video to StageVideo and vice versa. 
@@ -94,6 +84,7 @@ package org.bytearray.video
 					_sv.addEventListener(StageVideoEvent.RENDER_STATE, onRenderState);
 				}
 				_sv.attachNetStream(_ns);
+				dispatchEvent( new SimpleStageVideoToggleEvent ( SimpleStageVideoToggleEvent.TOGGLE, SimpleStageVideoToggleEvent.STAGEVIDEO ));
 				if (_classicVideoInUse)
 				{
 					stage.removeChild ( _video );
@@ -105,6 +96,7 @@ package org.bytearray.video
 					_stageVideoInUse = false;
 				_classicVideoInUse = true;
 				_video.attachNetStream(_ns);
+				dispatchEvent( new SimpleStageVideoToggleEvent ( SimpleStageVideoToggleEvent.TOGGLE, SimpleStageVideoToggleEvent.VIDEO ));
 				stage.addChildAt(_video, 0);
 			}
 			

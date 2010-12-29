@@ -3,6 +3,7 @@
   <includeClasses>
     <classEntry path="org.bytearray.video.SimpleStageVideo"/>
     <classEntry path="org.bytearray.video.events.SimpleStageVideoEvent"/>
+    <classEntry path="org.bytearray.video.events.SimpleStageVideoToggleEvent"/>
   </includeClasses>
   <includeResources/>
   <namespaceManifests/>
