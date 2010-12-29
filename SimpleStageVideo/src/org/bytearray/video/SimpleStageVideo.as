@@ -39,7 +39,6 @@ package org.bytearray.video
 	public class SimpleStageVideo extends Sprite
 	{		
 		private var _available:Boolean;
-		private var _inited:Boolean;
 		private var _stageVideoInUse:Boolean;
 		private var _classicVideoInUse:Boolean;
 		private var _played:Boolean;
@@ -208,7 +207,7 @@ package org.bytearray.video
 		 */		
 		private function onStageVideoAvailable(event:StageVideoAvailabilityEvent):void
 		{
-			toggle(_available = _inited = (event.availability == StageVideoAvailability.AVAILABLE));
+			toggle(_available = (event.availability == StageVideoAvailability.AVAILABLE));
 		}
 
 		/**
