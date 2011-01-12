@@ -16,6 +16,7 @@ package org.bytearray.video
 	import flash.media.StageVideo;
 	import flash.media.StageVideoAvailability;
 	import flash.media.Video;
+	import flash.media.VideoStatus;
 	import flash.net.NetStream;
 	
 	import org.bytearray.video.events.SimpleStageVideoEvent;
@@ -225,11 +226,11 @@ package org.bytearray.video
 			
 			if ( event is VideoEvent )
 			{
-				hwDecoding = (event as VideoEvent).status == StageVideoEvent.RENDER_STATUS_ACCELERATED;
+				hwDecoding = (event as VideoEvent).status == VideoStatus.ACCELERATED;
 				dispatchEvent( new SimpleStageVideoEvent ( SimpleStageVideoEvent.STATUS, hwDecoding, false, false ) );
 			}else 
 			{
-				hwDecoding = (event as StageVideoEvent).status == StageVideoEvent.RENDER_STATUS_ACCELERATED;
+				hwDecoding = (event as StageVideoEvent).status == VideoStatus.ACCELERATED;
 				dispatchEvent( new SimpleStageVideoEvent ( SimpleStageVideoEvent.STATUS, hwDecoding, true, hwDecoding && true ));
 			}
 				
