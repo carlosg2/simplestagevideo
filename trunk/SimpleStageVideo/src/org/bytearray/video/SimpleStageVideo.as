@@ -25,14 +25,21 @@ package org.bytearray.video
 	/**
 	 * The SimpleStageVideo class allows you to leverage StageVideo trough a few lines of ActionScript.
 	 * SimpleStageVideo automatically handles any kind of fallback, from StageVideo to video and vice versa.
-	 * To use SimpleStageVideo, use the following lines :
 	 * 
+	 * @example
+	 * To use SimpleStageVideo, use the following lines :
+	 * <div class="listing">
+	 * <pre>
+	 *
 	 * // specifies the size to conform (will always preserve ratio)
 	 * sv = new SimpleStageVideo(500, 500);
 	 * // dispatched when the NetStream object can be played
 	 * sv.addEventListener(Event.INIT, onInit);
 	 * // informs the developer about the compositing, decoding and if full GPU states
 	 * sv.addEventListener(SimpleStageVideoEvent.STATUS, onStatus);
+	 * </pre>
+	 * </div>
+	 * 
 	 * 
 	 * @author Thibault Imbert (bytearray.org)
 	 * @version 1.0
@@ -47,6 +54,8 @@ package org.bytearray.video
 		
 		private var _videoRect:Rectangle = new Rectangle(0, 0, 0, 0);
 		private var _reset:Rectangle = new Rectangle(0, 0, 0, 0);
+		
+		private var _initEvent:Event = new Event(Event.INIT);
 		
 		private var _ns:NetStream;
 		private var _video:Video;
@@ -103,7 +112,7 @@ package org.bytearray.video
 			if ( !_played ) 
 			{
 				_played = true;
-				dispatchEvent(new Event(Event.INIT));
+				dispatchEvent(_initEvent);
 			}
 		}
 		
