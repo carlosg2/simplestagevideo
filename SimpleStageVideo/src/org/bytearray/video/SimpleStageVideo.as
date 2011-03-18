@@ -42,7 +42,7 @@ package org.bytearray.video
 	 * 
 	 * 
 	 * @author Thibault Imbert (bytearray.org)
-	 * @version 1.0
+	 * @version 1.1
 	 */
 	public class SimpleStageVideo extends Sprite
 	{		
