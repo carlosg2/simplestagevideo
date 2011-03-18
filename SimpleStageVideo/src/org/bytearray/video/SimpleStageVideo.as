@@ -182,6 +182,7 @@ package org.bytearray.video
 		{
 			addChild(_video = new Video());
 			addEventListener(Event.ADDED_TO_STAGE, onAddedToStage);
+			addEventListener(Event.ADDED_TO_STAGE, onAddedToStageView);
 			addEventListener(Event.REMOVED_FROM_STAGE, onRemovedFromStage);
 		}
 
@@ -191,10 +192,19 @@ package org.bytearray.video
 		 * 
 		 */		
 		private function onAddedToStage(event:Event):void
-		{
+		{	
+			removeEventListener(Event.ADDED_TO_STAGE, onAddedToStage);
 			stage.addEventListener(StageVideoAvailabilityEvent.STAGE_VIDEO_AVAILABILITY, onStageVideoAvailable);
 			_video.addEventListener(VideoEvent.RENDER_STATE, onRenderState);
-			
+		}
+		
+		/**
+		 * 
+		 * @param event
+		 * 
+		 */		
+		private function onAddedToStageView(event:Event):void
+		{	
 			if (_classicVideoInUse)
 				stage.addChildAt(_video, 0);
 			else if ( _stageVideoInUse )
