@@ -37,6 +37,10 @@ package org.bytearray.video
 	 * sv.addEventListener(Event.INIT, onInit);
 	 * // informs the developer about the compositing, decoding and if full GPU states
 	 * sv.addEventListener(SimpleStageVideoEvent.STATUS, onStatus);
+	 * // initalizes it
+	 * addChild(sv);
+	 * // resize it (nothing will be shown if you do not specify a plane size)
+	 * sv.resize(myWidth, myHeight);
 	 * </pre>
 	 * </div>
 	 * 
