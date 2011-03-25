@@ -50,6 +50,7 @@ package org.bytearray.video
 		private var _stageVideoInUse:Boolean;
 		private var _classicVideoInUse:Boolean;
 		private var _played:Boolean;
+		private var _inited:Boolean;
 		private var _rc:Rectangle;
 		
 		private var _videoRect:Rectangle = new Rectangle(0, 0, 0, 0);
@@ -253,7 +254,11 @@ package org.bytearray.video
 				dispatchEvent( new SimpleStageVideoEvent ( SimpleStageVideoEvent.STATUS, hwDecoding, true, hwDecoding && true ));
 			}
 				
-			resize(_width, _height);
+			if ( _inited )
+			{
+				_inited = true;
+				resize(_width, _height);
+			}
 		} 
 		
 		/**

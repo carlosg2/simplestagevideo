@@ -7,8 +7,8 @@ package org.bytearray.video.events
 	public class SimpleStageVideoToggleEvent extends Event
 	{
 		public static const TOGGLE:String = "toggle";
-		public static const VIDEO:String = "video";
-		public static const STAGEVIDEO:String = "stageVideo";
+		public static const VIDEO:String = "Video";
+		public static const STAGEVIDEO:String = "Stage Video";
 		
 		private var _video:String;
 		
