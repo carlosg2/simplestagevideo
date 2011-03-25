@@ -44,7 +44,6 @@ package org.bytearray.video
 	 * </pre>
 	 * </div>
 	 * 
-	 * 
 	 * @author Thibault Imbert (bytearray.org)
 	 * @version 1.1
 	 */
