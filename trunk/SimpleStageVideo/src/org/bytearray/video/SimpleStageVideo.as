@@ -39,8 +39,6 @@ package org.bytearray.video
 	 * sv.addEventListener(SimpleStageVideoEvent.STATUS, onStatus);
 	 * // initalizes it
 	 * addChild(sv);
-	 * // resize it (nothing will be shown if you do not specify a plane size)
-	 * sv.resize(myWidth, myHeight);
 	 * </pre>
 	 * </div>
 	 * 
@@ -110,6 +108,7 @@ package org.bytearray.video
 				_classicVideoInUse = true;
 				_video.attachNetStream(_ns);
 				dispatchEvent( new SimpleStageVideoToggleEvent ( SimpleStageVideoToggleEvent.TOGGLE, SimpleStageVideoToggleEvent.VIDEO ));
+				_video.width = _video.height = 0;
 				stage.addChildAt(_video, 0);
 			}
 			
@@ -210,8 +209,9 @@ package org.bytearray.video
 		private function onAddedToStageView(event:Event):void
 		{	
 			if (_classicVideoInUse)
+			{
 				stage.addChildAt(_video, 0);
-			else if ( _stageVideoInUse )
+			} else if ( _stageVideoInUse )
 				_sv.viewPort = _videoRect;
 		}
 		
@@ -256,7 +256,7 @@ package org.bytearray.video
 				hwDecoding = (event as StageVideoEvent).status == VideoStatus.ACCELERATED;
 				dispatchEvent( new SimpleStageVideoEvent ( SimpleStageVideoEvent.STATUS, hwDecoding, true, hwDecoding && true ));
 			}
-		
+
 			resize(_width, _height);
 		} 
 		
