@@ -8,7 +8,7 @@ package org.bytearray.video.events
 	{
 		public static const TOGGLE:String = "toggle";
 		public static const VIDEO:String = "Video";
-		public static const STAGEVIDEO:String = "Stage Video";
+		public static const STAGEVIDEO:String = "StageVideo";
 		
 		private var _video:String;
 		
