@@ -256,10 +256,8 @@ package org.bytearray.video
 				hwDecoding = (event as StageVideoEvent).status == VideoStatus.ACCELERATED;
 				dispatchEvent( new SimpleStageVideoEvent ( SimpleStageVideoEvent.STATUS, hwDecoding, true, hwDecoding && true ));
 			}
-
-			if ( _inited )
-				resize(_width, _height);
-			_inited = true;
+		
+			resize(_width, _height);
 		} 
 		
 		/**
