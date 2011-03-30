@@ -37,7 +37,7 @@ package org.bytearray.video
 	 * sv.addEventListener(Event.INIT, onInit);
 	 * // informs the developer about the compositing, decoding and if full GPU states
 	 * sv.addEventListener(SimpleStageVideoEvent.STATUS, onStatus);
-	 * // initalizes it
+	 * // initializes it
 	 * addChild(sv);
 	 * </pre>
 	 * </div>
