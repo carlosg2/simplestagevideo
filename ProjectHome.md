@@ -1,0 +1,1 @@
+The SimpleStageVideo API allows you to leverage StageVideo trough a few lines of ActionScript. SimpleStageVideo automatically handles any kind of fallback, from StageVideo to video and vice versa.
